@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Барбершоп Домашка{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/orders/">Заявки</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Барбершоп Домашка</p>
+    </footer>
+
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>

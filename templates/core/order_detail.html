@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Заявка #{{ order.id }} - Барбершоп Домашка{% endblock %}
+
+{% block content %}
+<section class="order-detail">
+    {% if order %}
+    <h1>Заявка #{{ order.id }}</h1>
+    
+    <div class="order-info">
+        <p><strong>Клиент:</strong> {{ order.client_name }}</p>
+        <p><strong>Услуги:</strong></p>
+        <ul>
+            {% for service in order.services %}
+            <li>{{ service }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Мастер:</strong> 
+            {% for master in masters %}
+                {% if master.id == order.master_id %}
+                    {{ master.name }}
+                {% endif %}
+            {% endfor %}
+        </p>
+        <p><strong>Дата:</strong> {{ order.date }}</p>
+        <p><strong>Статус:</strong> {{ order.status }}</p>
+    </div>
+    
+    <a href="/orders/" class="button">Вернуться к списку заявок</a>
+    {% else %}
+    <h1>Заявка не найдена</h1>
+    <p>Извините, запрашиваемая заявка не существует.</p>
+    <a href="/orders/" class="button">Вернуться к списку заявок</a>
+    {% endif %}
+</section>
+{% endblock %}

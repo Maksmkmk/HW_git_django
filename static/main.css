@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Карточки */
+.master-card, .order-card {
+    background: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.masters-list, .orders-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* Кнопки */
+.button {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background: #555;
+}
+
+/* Секции */
+.hero {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.thanks {
+    text-align: center;
+    padding: 2rem 0;
+}

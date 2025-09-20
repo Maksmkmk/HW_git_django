@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная - Барбершоп Домашка{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Добро пожаловать в барбершоп "TOP"!</h1>
+    <p>Мы предлагаем лучшие услуги для вашего стиля</p>
+</section>
+
+<section class="masters">
+    <h2>Наши мастера</h2>
+    <div class="masters-list">
+        {% for master in masters %}
+        <div class="master-card">
+            <h3>{{ master.name }}</h3>
+            <p>ID: {{ master.id }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="recent-orders">
+    <h2>Последние заявки</h2>
+    <div class="orders-list">
+        {% for order in orders %}
+        <div class="order-card">
+            <h3>{{ order.client_name }}</h3>
+            <p>Услуги: {{ order.services|join:", " }}</p>
+            <p>Статус: {{ order.status }}</p>
+            <a href="/orders/{{ order.id }}/">Подробнее</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
